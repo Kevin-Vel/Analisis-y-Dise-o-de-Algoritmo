@@ -1,4 +1,3 @@
-import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
 
@@ -20,6 +19,7 @@ public class Menu extends JFrame {
         JButton btnCliente = new JButton("Creaar Cliente");
         JButton btnIniciar = new JButton("Iniciar Sesion");
         JButton btnSalir = new JButton("Salir");
+        JButton btnVerClientes= new JButton(("Ver Clientes"));
 
         //implementacion
         panel.add(btnCliente);
@@ -29,13 +29,22 @@ public class Menu extends JFrame {
         add(panel, BorderLayout.CENTER);
 
         //acciones
-        btnCliente.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, new VentanaCliente()));
+        btnCliente.addActionListener(e ->{
+            VentanaCliente ventana=new VentanaCliente(sistema);
+            ventana.setVisible(true);
+        });
 
-        btnIniciar.addActionListener(e ->
-                JOptionPane.showMessageDialog(this,"Ventana Cuenta"));
+        btnIniciar.addActionListener(e -> {
+            VentanaIniciar ventana = new VentanaIniciar();
+            ventana.setVisible(true);
+            dispose(); // para cerrar la ventana actual si quieres
+        });
 
         btnSalir.addActionListener( e ->
                 System.exit(0));
+        btnVerClientes.addActionListener(e -> {
+            String lista = sistema.getOrdenamiento().listaFormateada();
+            JOptionPane.showMessageDialog(this, lista, "Lista de Clientes", JOptionPane.INFORMATION_MESSAGE);
+        });
     }
 }
