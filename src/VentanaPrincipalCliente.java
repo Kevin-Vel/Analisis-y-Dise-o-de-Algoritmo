@@ -4,25 +4,25 @@ import java.awt.*;
 public class VentanaPrincipalCliente extends JFrame {
     private SistemaBanco sistema;
     private Cliente cliente;
+    private JLabel lblSaldo;
+    private JTextArea areaTransacciones;
 
     public VentanaPrincipalCliente(SistemaBanco sistema, Cliente cliente) {
-        this.sistema = sistema;
-        this.cliente = cliente;
+        // ... (código anterior de la Parte 1)
 
-        setTitle("Ventana Principal - " + cliente.getNombre());
-        setSize(600, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+        // Panel central con área de transacciones
+        JScrollPane panelCentral = crearPanelCentral();
+        add(panelCentral, BorderLayout.CENTER);
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout());
+        setVisible(true);
+    }
 
-        JLabel lblBienvenida = new JLabel("Bienvenido, " + cliente.getNombre() + " " + cliente.getApellido());
-        panel.add(lblBienvenida, BorderLayout.NORTH);
+    // ... (método crearPanelSuperior de la Parte 1)
 
-        // Aquí puedes agregar más componentes para las operaciones bancarias
-
-        add(panel);
-        setVisible(true); // Asegúrate de hacer visible la ventana
+    private JScrollPane crearPanelCentral() {
+        areaTransacciones = new JTextArea();
+        areaTransacciones.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(areaTransacciones);
+        return scrollPane;
     }
 }
