@@ -1,3 +1,6 @@
 Este ordenamiento es una mejora del ordenamiento simple
 tiene un mayor rango de acciones donde ordena por sub listas
 y despues las inserta con una insercion directa.
+
+APLICACION
+-Programa de microcobtroladores como arduino,etc
