@@ -4,4 +4,5 @@ datos como un pivote donde divide a su derecha y
 izquierda los datos que son mayores o menores que
 el pivote donde despues los junta en uno solo
 APLICACION
--Base de dstos, my sql, etc.
+-Base de dstos, my sql, SQL Magnate Studio, etc.
+
