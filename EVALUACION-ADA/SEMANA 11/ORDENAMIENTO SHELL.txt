@@ -4,3 +4,5 @@ y despues las inserta con una insercion directa.
 
 APLICACION
 -Programa de microcobtroladores como arduino,etc
+-
+Programa de power shell
