@@ -1,8 +1,8 @@
-Este ordenamiento es una mejora del ordenamiento simple
+Este ordenamiento es una mejora del ordenamiento simple psro
 tiene un mayor rango de acciones donde ordena por sub listas
-y despues las inserta con una insercion directa.
+y despues las inserta con una insercion directa (no usa mucha memoria).
 
 APLICACION
 -Programa de microcobtroladores como arduino,etc
--
-Programa de power shell
+-Programa como power shell
+
