@@ -1,0 +1,9 @@
+Esta busqueda compara con cada uno de
+los datos hasta encontrar lo que se busca
+su efectividad es de O(n), mayormente se 
+utiliza en listas q no esten ordenados
+o no sean tan grandes.
+
+Aplicaciones
+-Amazon
+-PlazaVea
