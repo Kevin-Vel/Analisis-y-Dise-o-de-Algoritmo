@@ -1,9 +1,9 @@
-Esta busqueda compara con cada uno de
-los datos hasta encontrar lo que se busca
-su efectividad es de O(n), mayormente se 
-utiliza en listas q no esten ordenados
-o no sean tan grandes.
+Esta busqueda divide ala lista en dos
+partes, compara para ver si es lo que 
+se busca y asi sucesivamente hasta encontrar 
+el dato su mejor caso es O(nlogn).
 
 Aplicaciones
--Amazon
--PlazaVea
+-Base de Datos
+-Programas financieros
+
