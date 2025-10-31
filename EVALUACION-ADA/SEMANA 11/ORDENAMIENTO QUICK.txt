@@ -1,0 +1,6 @@
+Primero elije un pivote al azar donde
+puede ser el ultimo, o el primero despues
+de eso va comparando los datos si son mayores
+los pondra en un lado y si son menores a su otro
+lado despues va eljiendo asi hasta que se ordene 
+todo:
