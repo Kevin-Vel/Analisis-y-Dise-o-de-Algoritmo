@@ -1,9 +1,12 @@
 Esta busqueda divide ala lista en dos
 partes, compara para ver si es lo que 
 se busca y asi sucesivamente hasta encontrar 
-el dato su mejor caso es O(nlogn).
+el dato su mejor caso es O(nlogn) se puede 
+implementar en java como un while dentro de
+una ArrayList.
 
 Aplicaciones
 -Base de Datos
 -Programas financieros
+
 
