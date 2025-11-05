@@ -1,0 +1,7 @@
+Recursividad
+Es una tecnica de programacion que se basa
+en dividir los problemas en subproblemas 
+donde se llama a si misma.
+
+Aplicaciones
+-Chrome
