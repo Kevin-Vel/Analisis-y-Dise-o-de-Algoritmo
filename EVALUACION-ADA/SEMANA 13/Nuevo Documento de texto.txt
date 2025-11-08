@@ -1,7 +1,21 @@
-Recursividad
-Es una tecnica de programacion que se basa
-en dividir los problemas en subproblemas 
-donde se llama a si misma.
+Recursividad                                                  Iteracion
+Es una tecnica de programacion que se basa                    Utiliza bucles(while, for) utiliza menos
+en dividir los problemas en subproblemas                      memoria pero complicado de implementar.
+donde se llama a si misma utiliza una pila
+de llamadas.
+
+Recursividad Indirecta
+Esta funcion ocurre cuando digamos una funcion
+llama a una segunda funcion, despues esa misma 
+segunda funcion llama a la primera funcion
+y asi se puede ir agregando mas funciones
+
+Backtraking
+Es una tecnica de recursividad que se utiliza
+para resolver problemas por decision, da una
+solucion parcial y despues retroce con un 
+bactrack porque no hay una solucion completa
 
 Aplicaciones
 -Chrome
+
