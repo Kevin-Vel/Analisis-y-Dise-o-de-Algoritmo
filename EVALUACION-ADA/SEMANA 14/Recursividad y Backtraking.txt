@@ -1,9 +1,12 @@
 Recursividad
 Es una funcion que se llama asi
-misma haciendo un pila de llamados
+misma haciendo un pila de llamados,
+consumiendo asi mas memoria se utiliza
+en casos necesarios tambien.
 
 Backtraking
 Hay tipos de bracktraking se ejecuta
 segun lo que se busca en el programa
 digamos la mejor solucion de un laberinto
 o en caso de el espacio de una mochila
+
