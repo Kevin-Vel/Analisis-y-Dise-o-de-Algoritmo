@@ -9,9 +9,10 @@ suma de un arreglo, busqueda binaria, etc.
 -Backtraking
 Hay tipos de bracktraking se ejecuta
 segun lo que se busca en el programa
-digamos la mejor solucion de un laberinto
-o en caso de el espacio de una mochila
+digamos la mejor solucion de un laberinto(menos movimientos)
+o en caso de el espacio de una mochila(capacidad maxima)
 Ejemplos: Permutaciones, resolver un laberinto,
 resolver sudoku(mas complejo), etc.
+
 
 
