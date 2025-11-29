@@ -28,14 +28,13 @@ public class SistemaBanco {
     }
 
     // ===========================
-    //    CARGAR DATOS
+    //         CARGAR DATOS
     // ===========================
     private void cargarDatos() {
-        // Cargar cuentas y empleados
         cuentas = cargarLista(ARCHIVO_CUENTAS);
         empleados = cargarLista(ARCHIVO_EMPLEADOS);
 
-        // Cargar clientes en el ordenamiento
+        // Cargar clientes en el ordenamiento (árbol, lista ordenada, etc.)
         List<Cliente> listaCargada = cargarLista(ARCHIVO_CLIENTES);
         for (Cliente c : listaCargada)
             ordenamiento.Implementacion(c);
@@ -55,7 +54,7 @@ public class SistemaBanco {
     }
 
     // ===========================
-    //      GESTIÓN CLIENTES
+    //        GESTIÓN CLIENTES
     // ===========================
     public Cliente crearCliente(int idclie, int dni, String nom, String apell, String contraseña) {
         Cliente cliente = new Cliente(idclie, dni, nom, apell, contraseña);
@@ -73,14 +72,12 @@ public class SistemaBanco {
         return null;
     }
 
-
-
     // ===========================
     //        GESTIÓN EMPLEADOS
     // ===========================
     public Empleados buscarEmpleadoPorCodigo(String codigo) {
         for (Empleados e : empleados) {
-            if (e.getDni().equalsIgnoreCase(codigo)) {  // su “dni” en realidad es código
+            if (e.getEDni().equalsIgnoreCase(codigo)) { // ahora usa EDni
                 return e;
             }
         }
@@ -113,43 +110,56 @@ public class SistemaBanco {
     }
 
     // ===========================
-    //    INICIO SESIÓN SIMPLE
+    //   INICIO SESIÓN (BÁSICO)
     // ===========================
-    public int iniciarSesion(int dni) {
-        return dni;
+    public Object iniciarSesion(String identificador, String password) {
+
+        // Si empieza con letra -> Empleado
+        if (Character.isLetter(identificador.charAt(0))) {
+            for (Empleados e : empleados) {
+                if (e.getEDni().equalsIgnoreCase(identificador)
+                        && e.getPassword().equals(password)) {
+                    return e;
+                }
+            }
+            return null;
+        }
+
+        // Caso contrario -> Cliente
+        for (Cliente c : ordenamiento.getListaCliente()) {
+            if (c.getDni().equals(identificador)
+                    && c.getPassword().equals(password)) {
+                return c;
+            }
+        }
+        return null;
     }
 
     // ===========================
     //      GUARDAR DATOS
     // ===========================
     public void guardarDatos() {
-        // Guardar clientes
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ARCHIVO_CLIENTES))) {
             oos.writeObject(ordenamiento.getListaCliente());
-            System.out.println("Clientes guardados: " + ordenamiento.getListaCliente().size());
         } catch (IOException e) {
             System.err.println("Error al guardar clientes: " + e.getMessage());
         }
 
-        // Guardar cuentas
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ARCHIVO_CUENTAS))) {
             oos.writeObject(cuentas);
-            System.out.println("Cuentas guardadas: " + cuentas.size());
         } catch (IOException e) {
             System.err.println("Error al guardar cuentas: " + e.getMessage());
         }
 
-        // Guardar EMPLEADOS  (no lo tenías, por eso fallaba)
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ARCHIVO_EMPLEADOS))) {
             oos.writeObject(empleados);
-            System.out.println("Empleados guardados: " + empleados.size());
         } catch (IOException e) {
             System.err.println("Error al guardar empleados: " + e.getMessage());
         }
     }
 
     // ===========================
-    //     TRANSACCIONES
+    //  REGISTRO TRANSACCIONES
     // ===========================
     public void registrarTransaccion(String descripcion) {
         try (FileWriter fw = new FileWriter("transacciones.txt", true)) {
@@ -160,19 +170,10 @@ public class SistemaBanco {
     }
 
     // ===========================
-    //  GETTERS NECESARIOS
+    //          GETTERS
     // ===========================
-    public Ordenamiento getOrdenamiento() {
-        return ordenamiento;
-    }
-
-    public List<Cuenta> getCuentas() {
-        return new ArrayList<>(cuentas);
-    }
-
-    public List<Empleados> getEmpleados() {
-        return new ArrayList<>(empleados);
-    }
+    public Ordenamiento getOrdenamiento() { return ordenamiento; }
+    public List<Cuenta> getCuentas() { return new ArrayList<>(cuentas); }
+    public List<Empleados> getEmpleados() { return new ArrayList<>(empleados); }
 }
-
 

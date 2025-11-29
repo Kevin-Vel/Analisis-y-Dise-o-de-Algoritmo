@@ -21,8 +21,7 @@ public class Empleados extends Persona implements Autenticable {
 
     @Override
     public boolean autenticar(String usuario, String contraseña) {
-        // Usuario = EDNI
-        return eDni.equals(usuario) && password.equals(contraseña);
+        return eDni.equals(usuario) && getPassword().equals(contraseña);
     }
 
     @Override
